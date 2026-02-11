@@ -1,0 +1,70 @@
+INSTRUKCJA ZARZĄDZANIA PRODUKTAMI NA STRONIE CENTROBUD
+======================================================
+
+Plik z danymi produktów to: "products.csv".
+Znajduje się on w głównym katalogu strony (tam gdzie index.html).
+
+Aby dodać, usunąć lub edytować produkty, należy edytować ten plik w dowolnym edytorze tekstu (Notatnik, VS Code) lub arkuszu kalkulacyjnym (Excel, LibreOffice).
+
+WAŻNE: Aby strona działała poprawnie lokalnie, musi być uruchomiona na serwerze lokalnym (np. Laragon, XAMPP, Live Server). Otwarcie pliku "index.html" bezpośrednio z dysku (dwuklik) spowoduje błąd ładowania danych (zabezpieczenia przeglądarki). Po wrzuceniu na serwer docelowy wszystko będzie działać poprawnie.
+
+JAK URUCHOMIĆ NA LARAGONIE (ktorego posiadasz):
+1. Uruchom Laragon.
+2. Kliknij "Start All".
+3. Jeśli projekt jest w folderze `laragon/www/centrobud`, wpisz w przeglądarce: http://centrobud.test lub http://localhost/centrobud
+4. Strona, która się otworzy, będzie poprawnie ładować dane z pliku CSV.
+
+Jeśli otworzysz plik bezpośrednio (ścieżka file:///...), zobaczysz błąd "Error loading products: Failed to fetch". To normalne zachowanie przeglądarek dla plików lokalnych.
+
+------------------------------------------------------
+JAK EDYTOWAĆ DANE W EXCELU (ZALECANE):
+
+1. Otwórz plik "products.csv" w Excelu.
+2. Jeśli dane wyświetlą się w jednej kolumnie, użyj opcji "Tekst jako kolumny" i wybierz przecinek jako separator.
+3. Edytuj dane.
+4. Zapisz plik jako "CSV (rozdzielany przecinkami)".
+5. Upewnij się, że kodowanie pliku to UTF-8 (aby polskie znaki działały poprawnie).
+
+------------------------------------------------------
+STRUKTURA DANYCH (KOLUMNY):
+
+1. id
+   - Unikalny numer porządkowy (np. 1, 2, 3...).
+
+2. group_id (KLUCZOWE!)
+   - Identyfikator grupy. Łączy warianty w jedną kartę produktu.
+   - Np. "knauf_unifit".
+   - Zmiana tego ID tworzy nową kartę.
+
+3. product_name
+   - Nazwa wyświetlana w nagłówku karty (np. "Knauf Unifit").
+
+4. variant_label
+   - Nazwa zakładki/wariantu (np. "UNIFIT 035").
+
+5. thickness
+   - Grubość produktu (np. 50, 100).
+   - Pojawi się w liście rozwijanej.
+
+6. price
+   - Cena netto za m2 (np. "16,73").
+
+7. image
+   - Ścieżka do zdjęcia (np. "images/product-image.webp").
+
+8. is_default
+   - 1 = domyślna zakładka po załadowaniu.
+   - 0 = pozostałe zakładki.
+   - Ustaw "1" tylko dla jednego wiersza w danej grupie `group_id`.
+
+------------------------------------------------------
+PRZYKŁADY:
+
+DODANIE GRUBOŚCI:
+Skopiuj wiersz z danym produktem, zmień `thickness` i `price`.
+
+DODANIE WARIANTU:
+Skopiuj wiersze produktu, zmień `variant_label`.
+
+DODANIE PRODUKTU:
+Dodaj nowe wiersze z nowym `group_id`.

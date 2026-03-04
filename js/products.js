@@ -131,7 +131,7 @@ function renderProducts(groupedProducts, container) {
                     </select>
                 </div>
                 <div class="info">
-                    <div class="text-2">Netto sprzedaż m2:<br /></div>
+                    <div class="text-2">Netto za m2<br /></div>
                     <div class="text-2 bold price-display">${initialPrice}</div>
                 </div>
             </div>`;

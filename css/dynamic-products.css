@@ -1,29 +1,34 @@
 /* Dynamic Product Card Styles */
 .wrapeer-detail {
-    display: none;
+  display: none;
 }
 
 .wrapeer-detail.active {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
 }
 
 .wrapeer-detail.active .info:first-child {
-    flex: 1 1 auto;
-    max-width: 80px;
-    width: 100%;
+  flex: 1 1 auto;
+  max-width: 80px;
+  width: 100%;
 }
 
 .wrapeer-detail.active .info:last-child {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .wrapeer-detail .thickness-select {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .label-text {
-    cursor: pointer;
+  cursor: pointer;
+  font-size: 11px !important;
+}
+
+.product-card .button-text {
+  font-size: 11px;
 }
